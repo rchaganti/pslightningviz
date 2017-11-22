@@ -74,3 +74,9 @@ function New-PSLightningVizVisualization
         return $response
     }
 }
+
+Write-Host "http://public.lightning-viz.org/visualizations/$($response.id)/public/"
+Write-Host "http://public.lightning-viz.org/visualizations/$($response.id)/embed/"
+
+Write-Host "http://public.lightning-viz.org/visualizations/$($response.id)/screenshot/?width=1024&height=768"
+Invoke-WebRequest -Uri "http://public.lightning-viz.org/visualizations/$($response.id)/screenshot/?width=1024&height=768" -OutFile "${env:temp}\test.png"
